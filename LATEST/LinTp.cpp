@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "LinTp.h"
 
+#include "LinTp_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -32,11 +34,13 @@
 /* OBJECTS                                           */
 /*****************************************************/
 class_LinTp LinTp;
+class_LinTp_EcuM LinTp_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_LinTp = &LinTp_EcuM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, LINTP_CODE) class_LinTp::InitFunction(void){
+FUNC(void, LINTP_CODE) class_LinTp_EcuM::InitFunction(void){
 }
 
 FUNC(void, LINTP_CODE) class_LinTp::GetVersionInfo(void){

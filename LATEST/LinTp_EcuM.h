@@ -22,12 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_LinTp_EcuM : public class_EcuM_Client{
+class interface_LinTp_EcuM : public interface_EcuM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, LINTP_CODE) InitFunction(void);
+      FUNC(void, LINTP_CODE) InitFunction   (void);
+      FUNC(void, LINTP_CODE) DeInitFunction (void);
 };
 
 /*****************************************************/
@@ -41,7 +42,7 @@ class class_LinTp_EcuM : public class_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_EcuM_Client *EcuM_Client_ptr_LinTp;
+extern interface_LinTp_EcuM *EcuM_Client_ptr_LinTp;
 
 /*****************************************************/
 /* EOF                                               */

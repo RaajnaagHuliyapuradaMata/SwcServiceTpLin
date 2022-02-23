@@ -1,15 +1,14 @@
+#pragma once
 /*****************************************************/
-/* File   : LinTp.cpp                                */
+/* File   : LinTp_Unused.h                           */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "module.h"
-#include "LinTp_EcuM.h"
-#include "LinTp_SchM.h"
-#include "LinTp_Unused.h"
+#include "Std_Types.h"
+#include "Compiler_Cfg_LinTp.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,15 +21,17 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_LinTp:
-      public abstract_module
-   ,  public interface_LinTp_EcuM
-   ,  public interface_LinTp_SchM
-{
+class class_LinTp_Unused{
    public:
-      FUNC(void, LINTP_CODE) InitFunction   (void);
-      FUNC(void, LINTP_CODE) DeInitFunction (void);
-      FUNC(void, LINTP_CODE) MainFunction   (void);
+/*****************************************************/
+/* FUNCTIONS                                         */
+/*****************************************************/
+      FUNC(void, LINTP_CODE) GetVersionInfo       (void);
+      FUNC(void, LINTP_CODE) Transmit             (void);
+      FUNC(void, LINTP_CODE) Shutdown             (void);
+      FUNC(void, LINTP_CODE) CancelTransmit       (void);
+      FUNC(void, LINTP_CODE) ChangeParameter      (void);
+      FUNC(void, LINTP_CODE) CancelReceive        (void);
 };
 
 /*****************************************************/
@@ -44,40 +45,7 @@ class module_LinTp:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_LinTp LinTp;
-
-interface_LinTp_EcuM *EcuM_Client_ptr_LinTp = &LinTp;
-interface_LinTp_SchM *SchM_Client_ptr_LinTp = &LinTp;
-
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
-FUNC(void, LINTP_CODE) module_LinTp::InitFunction(void){
-}
-
-FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
-}
-
-FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
-}
-
-FUNC(void, LINTP_CODE) class_LinTp_Unused::GetVersionInfo(void){
-}
-
-FUNC(void, LINTP_CODE) class_LinTp_Unused::Transmit(void){
-}
-
-FUNC(void, LINTP_CODE) class_LinTp_Unused::Shutdown(void){
-}
-
-FUNC(void, LINTP_CODE) class_LinTp_Unused::CancelTransmit(void){
-}
-
-FUNC(void, LINTP_CODE) class_LinTp_Unused::ChangeParameter(void){
-}
-
-FUNC(void, LINTP_CODE) class_LinTp_Unused::CancelReceive(void){
-}
+//extern class_LinTp LinTp;
 
 /*****************************************************/
 /* EOF                                               */

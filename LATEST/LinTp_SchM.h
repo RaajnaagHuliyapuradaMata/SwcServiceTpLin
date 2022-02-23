@@ -1,14 +1,15 @@
 #pragma once
 /*****************************************************/
-/* File   : LinTp.h                                  */
+/* File   : LinTp_SchM.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Std_Types.h"
 #include "Compiler_Cfg_LinTp.h"
+
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,17 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_LinTp{
+class interface_LinTp_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, LINTP_CODE) GetVersionInfo       (void);
-      FUNC(void, LINTP_CODE) Transmit             (void);
-      FUNC(void, LINTP_CODE) Shutdown             (void);
-      FUNC(void, LINTP_CODE) CancelTransmit       (void);
-      FUNC(void, LINTP_CODE) ChangeParameter      (void);
-      FUNC(void, LINTP_CODE) CancelReceive        (void);
+      FUNC(void, LINTP_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -45,7 +41,7 @@ class class_LinTp{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_LinTp LinTp;
+extern interface_LinTp_SchM *SchM_Client_ptr_LinTp;
 
 /*****************************************************/
 /* EOF                                               */

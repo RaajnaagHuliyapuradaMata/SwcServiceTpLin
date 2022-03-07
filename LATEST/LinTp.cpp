@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_LinTp:
       public abstract_module
-   ,  public interface_LinTp_EcuM
-   ,  public interface_LinTp_SchM
 {
    public:
       FUNC(void, LINTP_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_LinTp:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_LinTp LinTp;
-
-interface_LinTp_EcuM *EcuM_Client_ptr_LinTp = &LinTp;
-interface_LinTp_SchM *SchM_Client_ptr_LinTp = &LinTp;
+module_LinTp   LinTp;
+infEcuMClient* gptrinfEcuMClient_LinTp = &LinTp;
+infSchMClient* gptrinfSchMClient_LinTp = &LinTp;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

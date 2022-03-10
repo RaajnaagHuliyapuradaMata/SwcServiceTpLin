@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "LinTp_EcuM.h"
-#include "LinTp_SchM.h"
+#include "infLinTp_EcuM.h"
+#include "infLinTp_SchM.h"
 #include "LinTp_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_LinTp:
    public:
       FUNC(void, LINTP_CODE) InitFunction   (void);
       FUNC(void, LINTP_CODE) DeInitFunction (void);
+      FUNC(void, LINTP_CODE) GetVersionInfo (void);
       FUNC(void, LINTP_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_LinTp:
 /*****************************************************/
 module_LinTp   LinTp;
 infEcuMClient* gptrinfEcuMClient_LinTp = &LinTp;
+infDcmClient*  gptrinfDcmClient_LinTp  = &LinTp;
 infSchMClient* gptrinfSchMClient_LinTp = &LinTp;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(void){
 }
 
 FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
+}
+
+FUNC(void, LINTP_CODE) module_LinTp::GetVersionInfo(void){
 }
 
 FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){

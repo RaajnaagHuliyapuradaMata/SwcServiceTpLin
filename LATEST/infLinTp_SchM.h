@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : LinTp_EcuM.h                             */
+/* File   : infLinTp_SchM.h                          */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infEcuMClient* gptrinfEcuMClient_LinTp;
+extern infSchMClient* gptrinfSchMClient_LinTp;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

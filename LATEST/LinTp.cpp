@@ -6,9 +6,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infLinTp_Version.h"
-
 #include "module.h"
+#include "infLinTp_Version.h"
 #include "infLinTp_EcuM.h"
 #include "infLinTp_Dcm.h"
 #include "infLinTp_SchM.h"
@@ -45,31 +44,20 @@ class module_LinTp:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-
-/******************************************************************************/
-/* EOF                                                                        */
-/******************************************************************************/
-
-
-/*****************************************************/
-/* OBJECTS                                           */
-/*****************************************************/
 VAR(module_LinTp, LINTP_VAR) LinTp;
 CONSTP2VAR(infEcuMClient, LINTP_VAR, LINTP_CONST) gptrinfEcuMClient_LinTp = &LinTp;
 CONSTP2VAR(infDcmClient,  LINTP_VAR, LINTP_CONST) gptrinfDcmClient_LinTp  = &LinTp;
 CONSTP2VAR(infSchMClient, LINTP_VAR, LINTP_CONST) gptrinfSchMClient_LinTp = &LinTp;
 
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 FUNC(void, LINTP_CODE) module_LinTp::InitFunction(void){
+   LinTp.IsInitDone = E_OK;
 }
 
 FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
+   LinTp.IsInitDone = E_NOT_OK;
 }
 
 FUNC(void, LINTP_CODE) module_LinTp::GetVersionInfo(void){
@@ -95,7 +83,7 @@ FUNC(void, LINTP_CODE) class_LinTp_Unused::ChangeParameter(void){
 FUNC(void, LINTP_CODE) class_LinTp_Unused::CancelReceive(void){
 }
 
-/*****************************************************/
-/* EOF                                               */
-/*****************************************************/
+/******************************************************************************/
+/* EOF                                                                        */
+/******************************************************************************/
 

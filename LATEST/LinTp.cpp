@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infLinTp_Version.h"
+#include "LinTp_Cfg.h"
 #include "infLinTp_EcuM.h"
 #include "infLinTp_Dcm.h"
 #include "infLinTp_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define LINTP_AR_RELEASE_MAJOR_VERSION                                         4
+#define LINTP_AR_RELEASE_MINOR_VERSION                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(LINTP_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible LINTP_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(LINTP_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible LINTP_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
 }
 
 FUNC(void, LINTP_CODE) module_LinTp::GetVersionInfo(void){
+#if(STD_ON == LinTp_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){

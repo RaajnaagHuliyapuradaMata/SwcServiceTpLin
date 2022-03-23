@@ -40,6 +40,16 @@ class module_LinTp:
       FUNC(void, LINTP_CODE) DeInitFunction (void);
       FUNC(void, LINTP_CODE) GetVersionInfo (void);
       FUNC(void, LINTP_CODE) MainFunction   (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, LINTP_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/

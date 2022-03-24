@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "LinTp_Cfg.h"
+#include "CfgLinTp.h"
 #include "infLinTp_EcuM.h"
 #include "infLinTp_Dcm.h"
 #include "infLinTp_SchM.h"

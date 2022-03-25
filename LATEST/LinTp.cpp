@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgLinTp.h"
-#include "infLinTp_EcuM.h"
-#include "infLinTp_Dcm.h"
-#include "infLinTp_SchM.h"
+#include "module.hpp"
+#include "CfgLinTp.hpp"
+#include "infLinTp_EcuM.hpp"
+#include "infLinTp_Dcm.hpp"
+#include "infLinTp_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, LINTP_CODE) module_LinTp::GetVersionInfo(void){
 FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
 }
 
-#include "LinTp_Unused.h"
+#include "LinTp_Unused.hpp"
 
 FUNC(void, LINTP_CODE) class_LinTp_Unused::Transmit(void){
 }

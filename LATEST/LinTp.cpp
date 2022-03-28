@@ -90,7 +90,14 @@ FUNC(void, LINTP_CODE) module_LinTp::GetVersionInfo(void){
 FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
 }
 
-#include "LinTp_Unused.hpp"
+class class_LinTp_Unused{
+   public:
+      FUNC(void, LINTP_CODE) Transmit             (void);
+      FUNC(void, LINTP_CODE) Shutdown             (void);
+      FUNC(void, LINTP_CODE) CancelTransmit       (void);
+      FUNC(void, LINTP_CODE) ChangeParameter      (void);
+      FUNC(void, LINTP_CODE) CancelReceive        (void);
+};
 
 FUNC(void, LINTP_CODE) class_LinTp_Unused::Transmit(void){
 }

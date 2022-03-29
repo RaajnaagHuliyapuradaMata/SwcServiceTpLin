@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgLinTp.hpp"
 #include "infLinTp_EcuM.hpp"
 #include "infLinTp_Dcm.hpp"
 #include "infLinTp_SchM.hpp"
@@ -36,37 +35,40 @@ class module_LinTp:
       public abstract_module
 {
    public:
+      module_LinTp(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, LINTP_CODE) InitFunction   (void);
       FUNC(void, LINTP_CODE) DeInitFunction (void);
-      FUNC(void, LINTP_CODE) GetVersionInfo (void);
       FUNC(void, LINTP_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, LINTP_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_LinTp, LINTP_VAR) LinTp;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, LINTP_VAR, LINTP_CONST) gptrinfEcuMClient_LinTp = &LinTp;
+CONSTP2VAR(infDcmClient,  LINTP_VAR, LINTP_CONST) gptrinfDcmClient_LinTp  = &LinTp;
+CONSTP2VAR(infSchMClient, LINTP_VAR, LINTP_CONST) gptrinfSchMClient_LinTp = &LinTp;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgLinTp.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_LinTp, LINTP_VAR) LinTp;
-CONSTP2VAR(infEcuMClient, LINTP_VAR, LINTP_CONST) gptrinfEcuMClient_LinTp = &LinTp;
-CONSTP2VAR(infDcmClient,  LINTP_VAR, LINTP_CONST) gptrinfDcmClient_LinTp  = &LinTp;
-CONSTP2VAR(infSchMClient, LINTP_VAR, LINTP_CONST) gptrinfSchMClient_LinTp = &LinTp;
+VAR(module_LinTp, LINTP_VAR) LinTp(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(void){
 
 FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
    LinTp.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, LINTP_CODE) module_LinTp::GetVersionInfo(void){
-#if(STD_ON == LinTp_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){

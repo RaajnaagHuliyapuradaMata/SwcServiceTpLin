@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infLinTp_EcuM.hpp"
 #include "infLinTp_Dcm.hpp"
 #include "infLinTp_SchM.hpp"
@@ -37,6 +37,9 @@ class module_LinTp:
    public:
       module_LinTp(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, LINTP_CODE) InitFunction   (void);
       FUNC(void, LINTP_CODE) DeInitFunction (void);
       FUNC(void, LINTP_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_LinTp, LINTP_VAR) LinTp(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, LINTP_CODE) module_LinTp::InitFunction(void){
+FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
+   CONSTP2CONST(CfgLinTp_Type, CFGLINTP_CONFIG_DATA, CFGLINTP_APPL_CONST) lptrCfgLinTp
+){
+   if(NULL_PTR == lptrCfgLinTp){
+#if(STD_ON == LinTp_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgLinTp for memory faults
+// use PBcfg_LinTp as back-up configuration
+   }
    LinTp.IsInitDone = E_OK;
 }
 

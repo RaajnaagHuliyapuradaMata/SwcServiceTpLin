@@ -78,6 +78,7 @@ VAR(module_LinTp, LINTP_VAR) LinTp(
 FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, LINTP_CONFIG_DATA, LINTP_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == LinTp_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == LinTp_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == LinTp_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
 // use PBcfg_LinTp as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == LinTp_InitCheck)
    }
+#endif
 }
 
 FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
+#if(STD_ON == LinTp_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == LinTp_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == LinTp_InitCheck)
    }
+#endif
 }
 
 FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
+#if(STD_ON == LinTp_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == LinTp_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == LinTp_InitCheck)
+   }
+#endif
 }
 
 class class_LinTp_Unused{

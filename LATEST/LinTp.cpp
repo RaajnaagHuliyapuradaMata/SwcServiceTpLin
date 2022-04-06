@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define LINTP_AR_RELEASE_MAJOR_VERSION                                         4
-#define LINTP_AR_RELEASE_MINOR_VERSION                                         3
+#define LINTP_AR_RELEASE_VERSION_MAJOR                                         4
+#define LINTP_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(LINTP_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible LINTP_AR_RELEASE_MAJOR_VERSION!"
+#if(LINTP_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible LINTP_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(LINTP_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible LINTP_AR_RELEASE_MINOR_VERSION!"
+#if(LINTP_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible LINTP_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, LINTP_VAR, LINTP_CONST) gptrinfSchMClient_LinTp = &Lin
 /******************************************************************************/
 VAR(module_LinTp, LINTP_VAR) LinTp(
    {
-         0x0000
-      ,  0xFFFF
+         LINTP_AR_RELEASE_VERSION_MAJOR
+      ,  LINTP_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'

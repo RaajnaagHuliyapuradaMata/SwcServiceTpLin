@@ -101,8 +101,8 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgLinTp;
          }
       }
       IsInitDone = E_OK;

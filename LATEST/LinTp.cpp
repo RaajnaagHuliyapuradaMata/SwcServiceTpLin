@@ -31,8 +31,18 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_LinTp_Functionality{
+   public:
+      FUNC(void, LINTP_CODE) Transmit             (void);
+      FUNC(void, LINTP_CODE) Shutdown             (void);
+      FUNC(void, LINTP_CODE) CancelTransmit       (void);
+      FUNC(void, LINTP_CODE) ChangeParameter      (void);
+      FUNC(void, LINTP_CODE) CancelReceive        (void);
+};
+
 class module_LinTp:
       public abstract_module
+   ,  public class_LinTp_Functionality
 {
    public:
       module_LinTp(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +94,10 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == LinTp_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +106,10 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == LinTp_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +134,10 @@ FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == LinTp_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +154,10 @@ FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == LinTp_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,28 +168,19 @@ FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
 #endif
 }
 
-class class_LinTp_Unused{
-   public:
-      FUNC(void, LINTP_CODE) Transmit             (void);
-      FUNC(void, LINTP_CODE) Shutdown             (void);
-      FUNC(void, LINTP_CODE) CancelTransmit       (void);
-      FUNC(void, LINTP_CODE) ChangeParameter      (void);
-      FUNC(void, LINTP_CODE) CancelReceive        (void);
-};
-
-FUNC(void, LINTP_CODE) class_LinTp_Unused::Transmit(void){
+FUNC(void, LINTP_CODE) class_LinTp_Functionality::Transmit(void){
 }
 
-FUNC(void, LINTP_CODE) class_LinTp_Unused::Shutdown(void){
+FUNC(void, LINTP_CODE) class_LinTp_Functionality::Shutdown(void){
 }
 
-FUNC(void, LINTP_CODE) class_LinTp_Unused::CancelTransmit(void){
+FUNC(void, LINTP_CODE) class_LinTp_Functionality::CancelTransmit(void){
 }
 
-FUNC(void, LINTP_CODE) class_LinTp_Unused::ChangeParameter(void){
+FUNC(void, LINTP_CODE) class_LinTp_Functionality::ChangeParameter(void){
 }
 
-FUNC(void, LINTP_CODE) class_LinTp_Unused::CancelReceive(void){
+FUNC(void, LINTP_CODE) class_LinTp_Functionality::CancelReceive(void){
 }
 
 /******************************************************************************/

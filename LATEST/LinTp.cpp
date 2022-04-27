@@ -31,15 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_LinTp_Functionality{
-   public:
-      FUNC(void, LINTP_CODE) Transmit             (void);
-      FUNC(void, LINTP_CODE) Shutdown             (void);
-      FUNC(void, LINTP_CODE) CancelTransmit       (void);
-      FUNC(void, LINTP_CODE) ChangeParameter      (void);
-      FUNC(void, LINTP_CODE) CancelReceive        (void);
-};
-
 class module_LinTp:
       public abstract_module
    ,  public class_LinTp_Functionality

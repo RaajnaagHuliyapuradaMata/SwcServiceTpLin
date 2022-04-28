@@ -7,10 +7,24 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "CompilerCfg_LinTp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define LINTP_COREFUNCTIONALITIES                                              \
+              FUNC(void, LINTP_CODE) Transmit             (void);              \
+              FUNC(void, LINTP_CODE) Shutdown             (void);              \
+              FUNC(void, LINTP_CODE) CancelTransmit       (void);              \
+              FUNC(void, LINTP_CODE) ChangeParameter      (void);              \
+              FUNC(void, LINTP_CODE) CancelReceive        (void);              \
+
+#define LINTP_COREFUNCTIONALITIES_VIRTUAL                                      \
+      virtual FUNC(void, LINTP_CODE) Transmit             (void) = 0;          \
+      virtual FUNC(void, LINTP_CODE) Shutdown             (void) = 0;          \
+      virtual FUNC(void, LINTP_CODE) CancelTransmit       (void) = 0;          \
+      virtual FUNC(void, LINTP_CODE) ChangeParameter      (void) = 0;          \
+      virtual FUNC(void, LINTP_CODE) CancelReceive        (void) = 0;          \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -21,11 +35,7 @@
 /******************************************************************************/
 class class_LinTp_Functionality{
    public:
-      FUNC(void, LINTP_CODE) Transmit             (void);
-      FUNC(void, LINTP_CODE) Shutdown             (void);
-      FUNC(void, LINTP_CODE) CancelTransmit       (void);
-      FUNC(void, LINTP_CODE) ChangeParameter      (void);
-      FUNC(void, LINTP_CODE) CancelReceive        (void);
+      LINTP_COREFUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

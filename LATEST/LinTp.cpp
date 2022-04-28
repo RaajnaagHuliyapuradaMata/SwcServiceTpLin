@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "LinTp_core.hpp"
 #include "infLinTp_EcuM.hpp"
 #include "infLinTp_Dcm.hpp"
 #include "infLinTp_SchM.hpp"

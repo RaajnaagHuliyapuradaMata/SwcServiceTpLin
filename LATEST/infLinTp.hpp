@@ -1,30 +1,19 @@
 #pragma once
 /******************************************************************************/
-/* File   : LinTp_core.hpp                                                    */
+/* File   : infLinTp.hpp                                                      */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_LinTp.hpp"
+#include "infLinTp_EcuM.hpp"
+#include "infLinTp_Dcm.hpp"
+#include "infLinTp_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define LINTP_CORE_FUNCTIONALITIES                                             \
-              FUNC(void, LINTP_CODE) Transmit             (void);              \
-              FUNC(void, LINTP_CODE) Shutdown             (void);              \
-              FUNC(void, LINTP_CODE) CancelTransmit       (void);              \
-              FUNC(void, LINTP_CODE) ChangeParameter      (void);              \
-              FUNC(void, LINTP_CODE) CancelReceive        (void);              \
-
-#define LINTP_CORE_FUNCTIONALITIES_VIRTUAL                                     \
-      virtual FUNC(void, LINTP_CODE) Transmit             (void) = 0;          \
-      virtual FUNC(void, LINTP_CODE) Shutdown             (void) = 0;          \
-      virtual FUNC(void, LINTP_CODE) CancelTransmit       (void) = 0;          \
-      virtual FUNC(void, LINTP_CODE) ChangeParameter      (void) = 0;          \
-      virtual FUNC(void, LINTP_CODE) CancelReceive        (void) = 0;          \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -33,10 +22,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_LinTp_Functionality{
-   public:
-      LINTP_CORE_FUNCTIONALITIES_VIRTUAL
-};
 
 /******************************************************************************/
 /* CONSTS                                                                     */

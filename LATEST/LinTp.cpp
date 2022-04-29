@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgLinTp.hpp"
 #include "LinTp_core.hpp"
-#include "infLinTp_EcuM.hpp"
-#include "infLinTp_Dcm.hpp"
-#include "infLinTp_SchM.hpp"
+#include "infLinTp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_LinTp:
       );
       FUNC(void, LINTP_CODE) DeInitFunction (void);
       FUNC(void, LINTP_CODE) MainFunction   (void);
+      LINTP_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_LinTp, LINTP_VAR) LinTp;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, LINTP_VAR, LINTP_CONST) gptrinfSchMClient_LinTp = &Lin
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgLinTp.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */

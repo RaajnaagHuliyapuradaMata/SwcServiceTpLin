@@ -159,19 +159,19 @@ FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
 #endif
 }
 
-FUNC(void, LINTP_CODE) class_LinTp_Functionality::Transmit(void){
+FUNC(void, LINTP_CODE) module_LinTp::Transmit(void){
 }
 
-FUNC(void, LINTP_CODE) class_LinTp_Functionality::Shutdown(void){
+FUNC(void, LINTP_CODE) module_LinTp::Shutdown(void){
 }
 
-FUNC(void, LINTP_CODE) class_LinTp_Functionality::CancelTransmit(void){
+FUNC(void, LINTP_CODE) module_LinTp::CancelTransmit(void){
 }
 
-FUNC(void, LINTP_CODE) class_LinTp_Functionality::ChangeParameter(void){
+FUNC(void, LINTP_CODE) module_LinTp::ChangeParameter(void){
 }
 
-FUNC(void, LINTP_CODE) class_LinTp_Functionality::CancelReceive(void){
+FUNC(void, LINTP_CODE) module_LinTp::CancelReceive(void){
 }
 
 /******************************************************************************/

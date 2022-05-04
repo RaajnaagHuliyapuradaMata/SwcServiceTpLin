@@ -113,7 +113,7 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  LINTP_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  LINTP_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  LINTP_E_UNINIT
       );
 #endif
    }

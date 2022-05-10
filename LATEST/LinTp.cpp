@@ -89,7 +89,10 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, LINTP_CONFIG_DATA, LINTP_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == LinTp_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
 
 FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
 #if(STD_ON == LinTp_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == LinTp_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
 
 FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
 #if(STD_ON == LinTp_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == LinTp_InitCheck)
    }

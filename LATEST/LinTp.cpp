@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgLinTp.hpp"
 #include "LinTp_core.hpp"
-#include "infLinTp.hpp"
+#include "infLinTp_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_LinTp:
+   INTERFACES_EXPORTED_LINTP
       public abstract_module
    ,  public class_LinTp_Functionality
 {

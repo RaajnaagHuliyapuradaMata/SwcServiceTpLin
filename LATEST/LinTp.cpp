@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_LinTp:
-   INTERFACES_EXPORTED_LINTP
+      INTERFACES_EXPORTED_LINTP
       public abstract_module
    ,  public class_LinTp_Functionality
 {

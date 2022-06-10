@@ -74,10 +74,6 @@ CONSTP2VAR(infSchMClient, LINTP_VAR, LINTP_CONST) gptrinfSchMClient_LinTp = &Lin
 /******************************************************************************/
 VAR(module_LinTp, LINTP_VAR) LinTp(
    {
-#if(STD_ON == _ReSIM)
-         "LinTp",
-#else
-#endif
          LINTP_AR_RELEASE_VERSION_MAJOR
       ,  LINTP_AR_RELEASE_VERSION_MINOR
       ,  0x00

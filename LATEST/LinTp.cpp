@@ -131,7 +131,9 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
 #endif
 }
 
-FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
+FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(
+   void
+){
 #if(STD_ON == LinTp_InitCheck)
    if(
          E_OK
@@ -154,7 +156,9 @@ FUNC(void, LINTP_CODE) module_LinTp::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
+FUNC(void, LINTP_CODE) module_LinTp::MainFunction(
+   void
+){
 #if(STD_ON == LinTp_InitCheck)
    if(
          E_OK
@@ -176,19 +180,29 @@ FUNC(void, LINTP_CODE) module_LinTp::MainFunction(void){
 #endif
 }
 
-FUNC(void, LINTP_CODE) module_LinTp::Transmit(void){
+FUNC(void, LINTP_CODE) module_LinTp::Transmit(
+   void
+){
 }
 
-FUNC(void, LINTP_CODE) module_LinTp::Shutdown(void){
+FUNC(void, LINTP_CODE) module_LinTp::Shutdown(
+   void
+){
 }
 
-FUNC(void, LINTP_CODE) module_LinTp::CancelTransmit(void){
+FUNC(void, LINTP_CODE) module_LinTp::CancelTransmit(
+   void
+){
 }
 
-FUNC(void, LINTP_CODE) module_LinTp::ChangeParameter(void){
+FUNC(void, LINTP_CODE) module_LinTp::ChangeParameter(
+   void
+){
 }
 
-FUNC(void, LINTP_CODE) module_LinTp::CancelReceive(void){
+FUNC(void, LINTP_CODE) module_LinTp::CancelReceive(
+   void
+){
 }
 
 /******************************************************************************/

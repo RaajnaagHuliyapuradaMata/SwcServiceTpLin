@@ -41,13 +41,9 @@ class module_LinTp:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-            Std_TypeReturn          IsInitDone{E_NOT_OK};
-      const CfgModule_TypeAbstract* lptrCfg{(CfgModule_TypeAbstract*)NULL_PTR};
             infPduRClient_Lo        infPduRClient_LinTp;
 
    public:
-      module_LinTp(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
-      }
       FUNC(void, LINTP_CODE) InitFunction(
          CONSTP2CONST(CfgModule_TypeAbstract, LINTP_CONFIG_DATA, LINTP_APPL_CONST) lptrCfgModule
       );
@@ -72,18 +68,7 @@ CONSTP2VAR(infSchMClient, LINTP_VAR, LINTP_CONST) gptrinfSchMClient_LinTp = &Lin
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_LinTp, LINTP_VAR) LinTp(
-   {
-         LINTP_AR_RELEASE_VERSION_MAJOR
-      ,  LINTP_AR_RELEASE_VERSION_MINOR
-      ,  0x00
-      ,  0xFF
-      ,  0x01
-      ,  '0'
-      ,  '1'
-      ,  '0'
-   }
-);
+VAR(module_LinTp, LINTP_VAR) LinTp;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */

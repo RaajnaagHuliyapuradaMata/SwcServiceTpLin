@@ -83,12 +83,7 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgLinTp;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == LinTp_DevErrorDetect)

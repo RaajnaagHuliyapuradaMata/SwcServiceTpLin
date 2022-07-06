@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgLinTp.hpp"
-#include "LinTp_core.hpp"
-#include "infLinTp_Exp.hpp"
+#include "LinTp.hpp"
 #include "infLinTp_Imp.hpp"
 
 /******************************************************************************/
@@ -32,27 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_LinTp:
-      INTERFACES_EXPORTED_LINTP
-      public abstract_module
-   ,  public class_LinTp_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-            infPduRClient_Lo        infPduRClient_LinTp;
-
-   public:
-      FUNC(void, LINTP_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, LINTP_CONFIG_DATA, LINTP_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, LINTP_CODE) DeInitFunction (void);
-      FUNC(void, LINTP_CODE) MainFunction   (void);
-      LINTP_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_LinTp, LINTP_VAR) LinTp;
 
 /******************************************************************************/
 /* CONSTS                                                                     */

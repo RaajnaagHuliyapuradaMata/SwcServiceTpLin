@@ -8,9 +8,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "infLinTp_EcuM.hpp"
-#include "infLinTp_Dcm.hpp"
 #include "infLinTp_Det.hpp"
-#include "infLinTp_SchM.hpp"
 #include "infPduRClient_Lo.hpp"
 
 /******************************************************************************/

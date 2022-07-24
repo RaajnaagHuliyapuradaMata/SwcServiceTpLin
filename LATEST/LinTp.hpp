@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstLinTp.hpp"
 #include "CfgLinTp.hpp"
 #include "LinTp_core.hpp"
 #include "infLinTp_Exp.hpp"
@@ -31,6 +32,7 @@ class module_LinTp:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstLinTp_Type* lptrConst = (ConstLinTp_Type*)NULL_PTR;
       infPduRClient_Lo infPduRClient_LinTp;
 
    public:
@@ -38,7 +40,8 @@ class module_LinTp:
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, LINTP_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, LINTP_CONFIG_DATA, LINTP_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, LINTP_CONST,       LINTP_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   LINTP_CONFIG_DATA, LINTP_APPL_CONST) lptrCfgModule
       );
       FUNC(void, LINTP_CODE) DeInitFunction (void);
       FUNC(void, LINTP_CODE) MainFunction   (void);

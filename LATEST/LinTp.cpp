@@ -61,7 +61,7 @@ FUNC(void, LINTP_CODE) module_LinTp::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstLinTp_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{

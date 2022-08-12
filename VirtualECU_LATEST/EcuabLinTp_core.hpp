@@ -12,19 +12,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define LINTP_CORE_FUNCTIONALITIES                                             \
-              FUNC(void, LINTP_CODE) Transmit             (void);              \
-              FUNC(void, LINTP_CODE) Shutdown             (void);              \
-              FUNC(void, LINTP_CODE) McalCancelTransmit       (void);              \
-              FUNC(void, LINTP_CODE) ChangeParameter      (void);              \
-              FUNC(void, LINTP_CODE) McalCancelReceive        (void);              \
+#define ECUABLINTP_CORE_FUNCTIONALITIES                                             \
+              FUNC(void, ECUABLINTP_CODE) Transmit             (void);              \
+              FUNC(void, ECUABLINTP_CODE) Shutdown             (void);              \
+              FUNC(void, ECUABLINTP_CODE) McalCancelTransmit       (void);              \
+              FUNC(void, ECUABLINTP_CODE) ChangeParameter      (void);              \
+              FUNC(void, ECUABLINTP_CODE) McalCancelReceive        (void);              \
 
-#define LINTP_CORE_FUNCTIONALITIES_VIRTUAL                                     \
-      virtual FUNC(void, LINTP_CODE) Transmit             (void) = 0;          \
-      virtual FUNC(void, LINTP_CODE) Shutdown             (void) = 0;          \
-      virtual FUNC(void, LINTP_CODE) McalCancelTransmit       (void) = 0;          \
-      virtual FUNC(void, LINTP_CODE) ChangeParameter      (void) = 0;          \
-      virtual FUNC(void, LINTP_CODE) McalCancelReceive        (void) = 0;          \
+#define ECUABLINTP_CORE_FUNCTIONALITIES_VIRTUAL                                     \
+      virtual FUNC(void, ECUABLINTP_CODE) Transmit             (void) = 0;          \
+      virtual FUNC(void, ECUABLINTP_CODE) Shutdown             (void) = 0;          \
+      virtual FUNC(void, ECUABLINTP_CODE) McalCancelTransmit       (void) = 0;          \
+      virtual FUNC(void, ECUABLINTP_CODE) ChangeParameter      (void) = 0;          \
+      virtual FUNC(void, ECUABLINTP_CODE) McalCancelReceive        (void) = 0;          \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -35,7 +35,7 @@
 /******************************************************************************/
 class class_EcuabLinTp_Functionality{
    public:
-      LINTP_CORE_FUNCTIONALITIES_VIRTUAL
+      ECUABLINTP_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

@@ -1,19 +1,30 @@
 #pragma once
 /******************************************************************************/
-/* File   : infEcuabLinTp_Exp.hpp                                                  */
+/* File   : EcuabLinTp_core.hpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infEcuabLinTp_ServiceDet.hpp"
-#include "infServicePduRClient_Lo.hpp"
+#include "CompilerCfg_EcuabLinTp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define INTERFACES_EXMCALPORTED_ECUABLINTP
+#define LINTP_CORE_FUNCTIONALITIES                                             \
+              FUNC(void, LINTP_CODE) Transmit             (void);              \
+              FUNC(void, LINTP_CODE) Shutdown             (void);              \
+              FUNC(void, LINTP_CODE) McalCancelTransmit       (void);              \
+              FUNC(void, LINTP_CODE) ChangeParameter      (void);              \
+              FUNC(void, LINTP_CODE) McalCancelReceive        (void);              \
+
+#define LINTP_CORE_FUNCTIONALITIES_VIRTUAL                                     \
+      virtual FUNC(void, LINTP_CODE) Transmit             (void) = 0;          \
+      virtual FUNC(void, LINTP_CODE) Shutdown             (void) = 0;          \
+      virtual FUNC(void, LINTP_CODE) McalCancelTransmit       (void) = 0;          \
+      virtual FUNC(void, LINTP_CODE) ChangeParameter      (void) = 0;          \
+      virtual FUNC(void, LINTP_CODE) McalCancelReceive        (void) = 0;          \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -22,6 +33,10 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_EcuabLinTp_Functionality{
+   public:
+      LINTP_CORE_FUNCTIONALITIES_VIRTUAL
+};
 
 /******************************************************************************/
 /* CONSTS                                                                     */

@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define LINTP_AR_RELEASE_VERSION_MAJOR                                         4
-#define LINTP_AR_RELEASE_VERSION_MINOR                                         3
+#define ECUABLINTP_AR_RELEASE_VERSION_MAJOR                                         4
+#define ECUABLINTP_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(LINTP_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible LINTP_AR_RELEASE_VERSION_MAJOR!"
+#if(ECUABLINTP_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible ECUABLINTP_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(LINTP_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible LINTP_AR_RELEASE_VERSION_MINOR!"
+#if(ECUABLINTP_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible ECUABLINTP_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_EcuabLinTp, LINTP_VAR) EcuabLinTp;
+VAR(module_EcuabLinTp, ECUABLINTP_VAR) EcuabLinTp;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, LINTP_CODE) module_EcuabLinTp::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, LINTP_CONST,       LINTP_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   LINTP_CONFIG_DATA, LINTP_APPL_CONST) lptrCfgModule
+FUNC(void, ECUABLINTP_CODE) module_EcuabLinTp::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, ECUABLINTP_CONST,       ECUABLINTP_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABLINTP_CONFIG_DATA, ECUABLINTP_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == EcuabLinTp_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, LINTP_CODE) module_EcuabLinTp::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  LINTP_E_UNINIT
+         ,  ECUABLINTP_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, LINTP_CODE) module_EcuabLinTp::DeInitFunction(
+FUNC(void, ECUABLINTP_CODE) module_EcuabLinTp::DeInitFunction(
    void
 ){
 #if(STD_ON == EcuabLinTp_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, LINTP_CODE) module_EcuabLinTp::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  LINTP_E_UNINIT
+         ,  ECUABLINTP_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, LINTP_CODE) module_EcuabLinTp::MainFunction(
+FUNC(void, ECUABLINTP_CODE) module_EcuabLinTp::MainFunction(
    void
 ){
 #if(STD_ON == EcuabLinTp_InitCheck)
@@ -132,34 +132,34 @@ FUNC(void, LINTP_CODE) module_EcuabLinTp::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  LINTP_E_UNINIT
+         ,  ECUABLINTP_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, LINTP_CODE) module_EcuabLinTp::Transmit(
+FUNC(void, ECUABLINTP_CODE) module_EcuabLinTp::Transmit(
    void
 ){
 }
 
-FUNC(void, LINTP_CODE) module_EcuabLinTp::Shutdown(
+FUNC(void, ECUABLINTP_CODE) module_EcuabLinTp::Shutdown(
    void
 ){
 }
 
-FUNC(void, LINTP_CODE) module_EcuabLinTp::McalCancelTransmit(
+FUNC(void, ECUABLINTP_CODE) module_EcuabLinTp::McalCancelTransmit(
    void
 ){
 }
 
-FUNC(void, LINTP_CODE) module_EcuabLinTp::ChangeParameter(
+FUNC(void, ECUABLINTP_CODE) module_EcuabLinTp::ChangeParameter(
    void
 ){
 }
 
-FUNC(void, LINTP_CODE) module_EcuabLinTp::McalCancelReceive(
+FUNC(void, ECUABLINTP_CODE) module_EcuabLinTp::McalCancelReceive(
    void
 ){
 }

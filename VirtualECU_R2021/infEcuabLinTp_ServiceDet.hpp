@@ -1,6 +1,6 @@
 #pragma once
 /******************************************************************************/
-/* File   : EcuabLinTp_core.hpp                                                    */
+/* File   : infEcuabLinTp_ServiceDet.hpp                                                  */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
@@ -12,19 +12,6 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ECUABLINTP_CORE_FUNCTIONALITIES                                             \
-              FUNC(void, ECUABLINTP_CODE) Transmit             (void);              \
-              FUNC(void, ECUABLINTP_CODE) Shutdown             (void);              \
-              FUNC(void, ECUABLINTP_CODE) McalCancelTransmit       (void);              \
-              FUNC(void, ECUABLINTP_CODE) ChangeParameter      (void);              \
-              FUNC(void, ECUABLINTP_CODE) McalCancelReceive        (void);              \
-
-#define ECUABLINTP_CORE_FUNCTIONALITIES_VIRTUAL                                     \
-      virtual FUNC(void, ECUABLINTP_CODE) Transmit             (void) = 0;          \
-      virtual FUNC(void, ECUABLINTP_CODE) Shutdown             (void) = 0;          \
-      virtual FUNC(void, ECUABLINTP_CODE) McalCancelTransmit       (void) = 0;          \
-      virtual FUNC(void, ECUABLINTP_CODE) ChangeParameter      (void) = 0;          \
-      virtual FUNC(void, ECUABLINTP_CODE) McalCancelReceive        (void) = 0;          \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -33,10 +20,9 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_EcuabLinTp_Functionality{
-   public:
-      ECUABLINTP_CORE_FUNCTIONALITIES_VIRTUAL
-};
+typedef enum{
+      LINTP_E_UNINIT
+}EcuabLinTp_TypeServiceDetErrorCode;
 
 /******************************************************************************/
 /* CONSTS                                                                     */

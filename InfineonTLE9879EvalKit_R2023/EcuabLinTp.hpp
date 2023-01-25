@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : EcuabLinTp.hpp                                                         */
+/* File   : EcuabLinTp.hpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstEcuabLinTp.hpp"
+#include "infEcuabLinTp_ServiceNvM_Types.hpp"
 #include "CfgEcuabLinTp.hpp"
 #include "EcuabLinTp_core.hpp"
 #include "infEcuabLinTp_Exp.hpp"

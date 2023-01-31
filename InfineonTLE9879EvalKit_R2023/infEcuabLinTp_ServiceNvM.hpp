@@ -7,11 +7,8 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define CONSTECUABLINTP_AR_RELEASE_VERSION_MAJOR                               4
-#define CONSTECUABLINTP_AR_RELEASE_VERSION_MINOR                               3
-
-#define Const_DefaultInit_ConstEcuabLinTp                                                                              \
-   ,  {CONSTECUABLINTP_AR_RELEASE_VERSION_MAJOR, CONSTECUABLINTP_AR_RELEASE_VERSION_MINOR, 0x00,0xFF,0x01,'0','1','0'} \
+#define NvM_InitBlocksRom_EcuabLinTp                                                                         \
+   ,  {ECUABLINTP_AR_RELEASE_VERSION_MAJOR, ECUABLINTP_AR_RELEASE_VERSION_MINOR, 0x00,0xFF,0x01,'0','1','0'} \
 
 /******************************************************************************/
 /* EOF                                                                        */

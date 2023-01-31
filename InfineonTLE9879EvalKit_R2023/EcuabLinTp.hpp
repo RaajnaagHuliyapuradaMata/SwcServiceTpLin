@@ -32,7 +32,7 @@ class module_EcuabLinTp:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-      const ConstEcuabLinTp_Type* lptrConst = (ConstEcuabLinTp_Type*)NULL_PTR;
+      const ConstModule_TypeAbstract* lptrNvMBlocksRom = (ConstModule_TypeAbstract*)NULL_PTR;
       infServicePduRClient_Lo infServicePduRClient_EcuabLinTp;
 
    public:
@@ -40,7 +40,7 @@ class module_EcuabLinTp:
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, ECUABLINTP_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, ECUABLINTP_CONST,       ECUABLINTP_APPL_CONST) lptrConstModule
+            CONSTP2CONST(ConstModule_TypeAbstract, ECUABLINTP_CONST,       ECUABLINTP_APPL_CONST) lptrNvMBlocksRomModule
          ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABLINTP_CONFIG_DATA, ECUABLINTP_APPL_CONST) lptrCfgModule
       );
       FUNC(void, ECUABLINTP_CODE) DeInitFunction (void);
